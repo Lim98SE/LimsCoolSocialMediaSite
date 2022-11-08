@@ -1,0 +1,31 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        </head><body>{% include "headers.html" %}
+        <title>{{ name }}'s Posts</title>
+    
+    
+        {% include "navbar.html" %}
+        <div class="container">
+            <h1>{{ name }}'s posts</h1>
+            <h3>{{ bio }}</h3>
+        {% if num_posts &gt; 0 %}
+        {% for item in posts %}
+            <div class="row">
+                <div class="full">
+                    <p>{{ item }}</p>
+                    <hr>
+                    <a href="https://consoleserver.pythonanywhere.com/view?name={{%20name%20}}&amp;id={{%20num_posts%20-%20loop.index0%20-%201%20}}">Share this post!</a>
+                </div>
+            </div>
+        {% endfor %}
+        {% endif %}
+        {% if num_posts == 0 %}
+        <div class="row">
+            <div class="full">
+                <p>There appear to be no posts here.</p>
+            </div>
+        </div>
+        {% endif %}
+        </div>
+    
+</body></html>

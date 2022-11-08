@@ -1,0 +1,20 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        </head><body>{% include "headers.html" %}
+        <title>All Users</title>
+    
+    
+        {% include "navbar.html" %}
+        <div class="container">
+            <h1>Users</h1>
+        {% for item in users %}
+            <div class="row">
+                <div class="full">
+                    <p>{{ item }}</p>
+                    <a href="https://www.pythonanywhere.com/posts?name={{%20item%20}}">View their Posts</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    
+</body></html>
