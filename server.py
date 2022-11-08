@@ -126,10 +126,13 @@ def post_post():
     name = request.cookies.get("name")
 
     if name is None or request.cookies.get("loggedin") != "1":
-        return make_response(render_template("redirect.html", page="/post"))
+        return make_response(render_template("redirect.html", page="/login"))
 
     with open("database.yml") as database_file:
         database = yaml.load(database_file, yml_loader)
+
+    if database[name]["id"] != request.cookies.get("id"):
+        return make_response(render_template("redirect.html", page="/login"))
 
     if request.form.get("post") == None or len(request.form.get("post")) == 0 or len(request.form.get("post")) > 200:
         return make_response(render_template("redirect.html", page="/post"))
@@ -181,7 +184,11 @@ def view_get():
 
 @app.route("/settings", methods=["GET"])
 def settings_get():
+    name = request.cookies.get("name")
     if request.cookies.get("loggedin") != "1":
+        return make_response(render_template("redirect.html", page="/login"))
+
+    if database[name]["id"] != request.cookies.get("id"):
         return make_response(render_template("redirect.html", page="/login"))
 
     return make_response(render_template("settings.html"))
