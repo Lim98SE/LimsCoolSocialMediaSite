@@ -1,0 +1,113 @@
+html {
+    background-color: #202020;
+    color: #FFF;
+    font-family: sans-serif;
+    font-size: 28px;
+    padding: 4ch;
+    padding-top: 1ch;
+    padding-bottom: 1ch;
+}
+
+div.navbar {
+    background-color: #333;
+    padding: 1ch;
+}
+
+div.container {
+    display: block;
+}
+
+div.row {
+    display: flex;
+    margin-bottom: 0.5ch;
+    margin-top: 0.5ch;
+}
+
+div.left, div.center, div.right {
+    margin: auto;
+    width: 30%;
+    background-color: #333;
+    padding: 1ch;
+    transition: background-color 0.5s;
+}
+
+div.full{
+    margin: auto;
+    width: 80%;
+    background-color: #333;
+    padding: 1ch;
+    transition: background-color 0.5s;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+div.left:hover, div.center:hover, div.right:hover, div.full:hover {
+    background-color: #444;
+    transition: background-color 0.5s;
+}
+
+hr {
+    width: 50%;
+    background-color: #FFFFFF;
+    border: 0px;
+    height: 2px;
+}
+
+a {
+    color: #07F;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+a:hover {
+    color: #29F;
+    transition: color 0.5s;
+}
+
+input {
+    color: #FFF;
+    background-color: #303030;
+    border: none;
+    padding: 0.5ch;
+    width: 40ch;
+    margin-top: 0.5ch;
+    margin-bottom: 0.5ch;
+}
+
+select {
+    color: #FFF;
+    background-color: #303030;
+    border: none;
+    padding: 0.5ch;
+    width: 40ch;
+    margin-top: 0.5ch;
+    margin-bottom: 0.5ch;
+}
+
+button {
+    color: #FFF;
+    background-color: #303030;
+    border: none;
+    padding: 0.5ch;
+    width: 40ch;
+    margin-top: 0.5ch;
+    margin-bottom: 0.5ch;
+}
+
+.padded-sides {
+    margin-left: 2ch;
+    margin-right: 2ch;
+}
+
+textarea {
+    width: 40ch;
+    color: #FFF;
+    background-color: #303030;
+    border: none;
+    padding: 0.5ch;
+    width: 80%;
+    height: 60ch;
+    margin-top: 0.5ch;
+    margin-bottom: 0.5ch;
+    resize: none;
+}
